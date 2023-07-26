@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob Developer</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+ 
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom-css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- alpine js -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+<body class="bg-primary-light">
+    <nav class="bg-gradient-to-r from-primary-dark to-secondary-dark py-1 px-3 lg:px-0" x-data="{ sidebar:false }">
+        <!-- menu items & logo -->
+        <div class="container flex items-center justify-between">
+            <div class="w-[65px] lg:w-[5%] bg-secondary-dark p-1 rounded">
+                <img src="logo.png" alt="logo" class="w-full">
+            </div>
+
+            <ul class="hidden lg:flex lg:items-center lg:space-x-5 lg:text-primary-blue font-semibold uppercase">
+                <li class="">
+                    <a href="#" class="bg-primary-blue text-white p-2 rounded">Home</a>
+                </li>
+                <li class="">
+                    <a href="#" class="hover:bg-primary-blue hover:text-white p-2 rounded">About Me</a>
+                </li>
+                <li class="">
+                    <a href="#" class="hover:bg-primary-blue hover:text-white p-2 rounded">Services</a>
+                </li>
+                <li class="">
+                    <a href="#" class="hover:bg-primary-blue hover:text-white p-2 rounded">Portfolio</a>
+                </li>
+                <li class="">
+                    <a href="#" class="hover:bg-primary-blue hover:text-white p-2 rounded">Blog</a>
+                </li>
+                <li class="">
+                    <a href="#" class="hover:bg-primary-blue hover:text-white p-2 rounded">Contact Me</a>
+                </li>
+            </ul>
+
+            <button class="border-2 border-primary-blue px-2 py-1 lg:hidden" @click="sidebar = !sidebar">
+                <i class="fa-solid fa-bars text-lg text-primary-blue"></i>
+            </button>
+        </div>
+
+        <ul class="w-full mt-5 pb-2 text-white space-y-3 divide-y divide-primary-blue px-3 lg:hidden" x-show="sidebar" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-300 trasnform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" x-cloak>
+            <li class="">
+                <a href="#" class="">Home</a>
+            </li>
+            <li class="">
+                <a href="#" class="">About Me</a>
+            </li>
+            <li class="">
+                <a href="#" class="">Services</a>
+            </li>
+            <li class="">
+                <a href="#" class="">Portfolio</a>
+            </li>
+            <li class="">
+                <a href="#" class="">Blog</a>
+            </li>
+            <li class="">
+                <a href="#" class="">Contact Me</a>
+            </li>
+        </ul>
+    </nav>
+    
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#1f1f2a',
+                            blue: '#00aac2',
+                            light: '#C3C9CC'
+                        }, 
+                        secondary: {
+                            gray: '#8C949C',
+                            blue: '#048B9C',
+                            dark: '#43414D'
+                        }
+                    },
+                    container: {
+                        center: true
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
